@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: iv-migration-tools-notification-db
+spec:
+  volumes:
+  - name: pvc-mount
+    persistentVolumeClaim:
+      claimName: il-alts-notifications-mongodb-mgmt-backup
+  containers:
+  - image: registry.deployment.intralinks.com:5000/il/il-mongodb-mgmt:7.0.5-64_ga10a6e6
+    env: 
+    - name: ALTS_MONGO_PASSWORD
+      valueFrom:
+        secretKeyRef:
+          name: il-alts-notifications-mongodb-service-user
+          key: servicePassword  
+    command:
+      - /bin/sh
+      - "-c"
+      - "sleep 60m"
+    imagePullPolicy: IfNotPresent
+    name: alpine
+    volumeMounts:
+    - mountPath: "pvc_mnt"
+      name: pvc-mount
+  restartPolicy: Always
