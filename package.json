@@ -12,6 +12,7 @@
     "axios": "^1.6.7",
     "csv-stringify": "^6.4.6",
     "lodash": "^4.17.21",
-    "lzutf8": "^0.6.3"
+    "lzutf8": "^0.6.3",
+    "sparkpost": "^2.1.4"
   }
 }
