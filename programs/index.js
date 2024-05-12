@@ -1,7 +1,7 @@
-const SparkPost = require("sparkpost");
+// const SparkPost = require("sparkpost");
 
-const YOUR_API_KEY = "54b4c709e7b19ddebcfee2431afe8dfaf309a408";
-const client = new SparkPost(YOUR_API_KEY);
+// const YOUR_API_KEY = "";
+// const client = new SparkPost(YOUR_API_KEY);
 
 // const options = {
 //     endpoint: 'https://dev.sparkpost.com:443'
@@ -43,4 +43,19 @@ function sendEmail() {
       console.log(err);
     });
 }
-getDomains();
+// getDomains();
+
+let st = new Map();
+let vec = [];
+vec.push([0, 1]);
+vec.push([1, 1]);
+vec.push([2, 2]);
+st.set(vec, true);
+
+vec = [];
+vec.push([0, 1]);
+vec.push([1, 1]);
+vec.push([2, 2]);
+st.set(vec, true);
+
+console.log(st);
