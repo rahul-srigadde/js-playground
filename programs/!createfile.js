@@ -94,16 +94,14 @@ class GenerateFileSystem {
 }
 
 function driverFn(createmode = false) {
-  let inputString = "Frog Jump with k Distances";
-
-  const fileSys = new GenerateFileSystem(filePath.graph);
+  let inputString = "Chocolate Pickup";
+  const fileSys = new GenerateFileSystem(filePath.dp);
 
   // const files = fileSys.getFilesName();
+  // fileSys.createfileNameAndRenameFile();
 
-  // createmode && fileSys.createFile(inputString);
-
-  // !createmode && fileSys.modifyContent(inputString);
-
-  fileSys.createfileNameAndRenameFile();
+  createmode && fileSys.createFile(inputString);
+  !createmode && fileSys.modifyContent(inputString);
 }
-driverFn();
+
+driverFn(!true);
