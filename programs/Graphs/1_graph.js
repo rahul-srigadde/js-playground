@@ -1,6 +1,6 @@
-/*
-ds class
-*/
+/**
+ * ds class
+ */
 class Graph {
   constructor() {
     this.adjacencyList = {};

@@ -1,19 +1,20 @@
-/*
-https://leetcode.com/discuss/interview-question/1408271/5-cycle-in-an-undirected-graph
-Cycle in an Undirected Graph
+/**
+ * https://leetcode.com/discuss/interview-question/1408271/5-cycle-in-an-undirected-graph
 
-Detection of a Cycle in an Undirected Graph.
+ * Cycle in an Undirected Graph
 
-2 Methods to solve this-
+ * Detection of a Cycle in an Undirected Graph.
 
-DFS
-BFS
-Let's done with DFS:
+ * 2 Methods to solve this-
 
-Algorithm:
+ * DFS
+ * BFS
+ * Let's done with DFS:
 
-For every visited vertex v, if there is an adjacent u such that u is already visited and u is not parent of v, then there is a cycle in graph.
-If we don’t find such an adjacent for any vertex, we say that there is no cycle.
+ * Algorithm:
+
+ * For every visited vertex v, if there is an adjacent u such that u is already visited and u is not parent of v, then there is a cycle in graph.
+ * If we don’t find such an adjacent for any vertex, we say that there is no cycle.
  */
 var detectCycleinGraphByDFS = function (vertices, adjList) {
   const visited = Array(vertices.length).fill(false);
