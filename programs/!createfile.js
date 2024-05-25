@@ -94,7 +94,7 @@ class GenerateFileSystem {
 }
 
 function driverFn(createmode = false) {
-  let inputString = "Chocolate Pickup";
+  let inputString = "Partitions With Given Difference";
   const fileSys = new GenerateFileSystem(filePath.dp);
 
   // const files = fileSys.getFilesName();

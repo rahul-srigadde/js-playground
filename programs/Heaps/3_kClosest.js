@@ -1,7 +1,41 @@
+/**
+ * K Closest Points to Origin
+ * https://neetcode.io/problems/k-closest-points-to-origin
+ * Given an array of points where points[i] = [xi, yi] represents a point on the X-Y plane and an integer k, return the k closest points to the origin (0, 0).
+
+ * The distance between two points on the X-Y plane is the Euclidean distance (i.e., √(x1 - x2)2 + (y1 - y2)2).
+
+ * You may return the answer in any order. The answer is guaranteed to be unique (except for the order that it is in).
+
+ * 
+
+ * Example 1:
+
+
+ * Input: points = [[1,3],[-2,2]], k = 1
+ * Output: [[-2,2]]
+ * Explanation:
+ * The distance between (1, 3) and the origin is sqrt(10).
+ * The distance between (-2, 2) and the origin is sqrt(8).
+ * Since sqrt(8) < sqrt(10), (-2, 2) is closer to the origin.
+ * We only want the closest k = 1 points from the origin, so the answer is just [[-2,2]].
+ * Example 2:
+
+ * Input: points = [[3,3],[5,-1],[-2,4]], k = 2
+ * Output: [[3,3],[-2,4]]
+ * Explanation: The answer [[-2,4],[3,3]] would also be accepted.
+ * 
+
+ * Constraints:
+
+ * 1 <= k <= points.length <= 104
+ * -104 <= xi, yi <= 104
+ */
 class ClosetPoints {
   constructor(points, k) {
     this.k = k;
-    this.heap = new Maxheap();
+    this.heap = new Maxheap(); // this.heap = new Maxheap((a,b) => a.distance - b.distance)
+
     points.forEach((element) => {
       this.add(element);
     });
@@ -104,6 +138,68 @@ class Maxheap {
   }
 }
 
+class Maxheap {
+  constructor(comparator = (a, b) => a - b) {
+    this.values = [];
+    this.comparator = comparator;
+  }
+  getpoints() {
+    return this.values.map((x) => x.point);
+  }
+  peek() {
+    return this.values[0];
+  }
+  size() {
+    return this.values.length;
+  }
+  swap(i, j) {
+    [this.values[i], this.values[j]] = [this.values[j], this.values[i]];
+  }
+  insert(point) {
+    const node = new Node(point);
+    this.values.push(node);
+    this.heapifyUp(this.size() - 1);
+  }
+  heapifyUp(index) {
+    while (index) {
+      const parentIdx = Math.floor((index - 1) / 2);
+      if (this.comparator(this.values[index], this.values[parentIdx]) > 0) {
+        this.swap[(index, parentIdx)];
+        index = parentIdx;
+      } else {
+        break;
+      }
+    }
+  }
+  extractMax() {
+    const max = this.values[0];
+    this.values[0] = this.values.pop();
+    this.heapifyDown(0);
+    return max;
+  }
+  heapifyDown(index) {
+    const left = 2 * index + 1;
+    const right = 2 * index + 2;
+    let smallest = index;
+    if (
+      left < this.size() &&
+      this.comparator(this.values[left], this.values[smallest]) > 0
+    ) {
+      smallest = left;
+    }
+    if (
+      right < this.size() &&
+      this.comparator(this.values[right], this.values[smallest]) > 0
+    ) {
+      smallest = right;
+    }
+
+    if (index != smallest) {
+      this.swap(index, smallest);
+      this.heapifyDown(smallest);
+    }
+  }
+}
 var kClosest = function (points, k) {
   const kclosetPoints = new ClosetPoints(points, k);
   console.log(kclosetPoints.getKCloset());
