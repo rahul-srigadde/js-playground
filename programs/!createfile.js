@@ -94,7 +94,7 @@ class GenerateFileSystem {
 }
 
 function driverFn(createmode = false) {
-  let inputString = "Partitions With Given Difference";
+  let inputString = "Minimum Elements";
   const fileSys = new GenerateFileSystem(filePath.dp);
 
   // const files = fileSys.getFilesName();

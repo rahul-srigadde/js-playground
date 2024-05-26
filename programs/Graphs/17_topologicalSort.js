@@ -26,3 +26,27 @@ var topologicalSort = function (v, adjls) {
 
   return stack.reverse();
 };
+
+var topologicalSortbyBFS = function (v, adjls) {
+  let indegree = Array(v).fill(0);
+  let queue = [];
+  const result = [];
+  for (const edges of adjls) {
+    for (const edge of edges) {
+      indegree[edge]++;
+    }
+  }
+  for (let i = 0; i < v; i++) {
+    if (indegree[i] === 0) queue.push(i);
+  }
+  while (queue.length) {
+    let node = queue.shift();
+    result.push(node);
+    for (const edge of adjls[node]) {
+      indegree[edge]--;
+      if (indegree[edge] === 0) queue.push(edge);
+    }
+  }
+
+  return result;
+};
