@@ -1,7 +1,10 @@
 /**
  * 0-1Knapsack
  * Problem statement
- * A thief is robbing a store and can carry a maximal weight of W into his knapsack. There are N items and the ith item weighs wi and is of value vi. Considering the constraints of the maximum weight that a knapsack can carry, you have to find and return the maximum value that a thief can generate by stealing items.
+ * A thief is robbing a store and can carry a maximal weight of W into his knapsack.
+ * There are N items and the ith item weighs wi and is of value vi.
+ * Considering the constraints of the maximum weight that a knapsack can carry,
+ * you have to find and return the maximum value that a thief can generate by stealing items.
  *
  * Detailed explanation ( Input/output format, Notes, Images )
  * Constraints:

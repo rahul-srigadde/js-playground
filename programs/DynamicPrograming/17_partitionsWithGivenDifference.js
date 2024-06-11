@@ -74,9 +74,8 @@
  * 1
  * 6
  * 3
- */
-/**
  * s1 & s2 are subsets of the arr
+ *
  * s1-s2 = d
  * s1+s2 = totalsum
  * 2s2 = totalsum - d

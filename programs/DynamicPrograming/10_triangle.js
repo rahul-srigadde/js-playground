@@ -72,7 +72,7 @@
 function triangle(r = 0, c = 0, matrix) {
   const rows = matrix.length;
   function solve(m, n) {
-    if (m === rows - 1) return matrix[i][n];
+    if (m === rows - 1) return matrix[m][n];
     const up = matrix[m][n] + solve(m + 1, n);
     const dg = matrix[m][n] + solve(m + 1, n + 1);
     return Math.min(up, dg);
@@ -85,7 +85,7 @@ function triangle(r = 0, c = 0, matrix) {
   const rows = matrix.length;
   const dp = Array.from({ length: rows }, () => new Array(rows).fill(-1));
   function solve(m, n) {
-    if (m === rows - 1) return matrix[i][n];
+    if (m === rows - 1) return matrix[m][n];
     if (dp[m][n] !== -1) return dp[m][n];
     const up = matrix[m][n] + solve(m + 1, n);
     const dg = matrix[m][n] + solve(m + 1, n + 1);

@@ -94,7 +94,7 @@ class GenerateFileSystem {
 }
 
 function driverFn(createmode = false) {
-  let inputString = "Minimum Elements";
+  let inputString = "Ways To Make Coin Change";
   const fileSys = new GenerateFileSystem(filePath.dp);
 
   // const files = fileSys.getFilesName();
