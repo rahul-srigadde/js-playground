@@ -94,7 +94,7 @@ class GenerateFileSystem {
 }
 
 function driverFn(createmode = false) {
-  let inputString = "Ways To Make Coin Change";
+  let inputString = "Longest Common Subsequence";
   const fileSys = new GenerateFileSystem(filePath.dp);
 
   // const files = fileSys.getFilesName();
