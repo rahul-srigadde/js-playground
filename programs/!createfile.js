@@ -2,14 +2,16 @@ const fs = require("fs");
 const { filesInobject } = require("./log.js");
 
 const filePath = {
-  array: "/Users/rsrigadd/personal/playground/programs/Arrays/",
-  backtracking: "/Users/rsrigadd/personal/playground/programs/Backtracking/",
-  binarysearch: "/Users/rsrigadd/personal/playground/programs/binarySearch/",
-  graph: "/Users/rsrigadd/personal/playground/programs/Graphs/",
-  heap: "/Users/rsrigadd/personal/playground/programs/Heaps",
-  recursion: "/Users/rsrigadd/personal/playground/programs/Recursion/",
-  sorts: "/Users/rsrigadd/personal/playground/programs/sorts/",
-  dp: "/Users/rsrigadd/personal/playground/programs/DynamicPrograming/",
+  array: "/Users/rahulsrigadde/personal/playground/programs/Arrays/",
+  backtracking:
+    "/Users/rahulsrigadde/personal/playground/programs/Backtracking/",
+  binarysearch:
+    "/Users/rahulsrigadde/personal/playground/programs/binarySearch/",
+  graph: "/Users/rahulsrigadde/personal/playground/programs/Graphs/",
+  heap: "/Users/rahulsrigadde/personal/playground/programs/Heaps",
+  recursion: "/Users/rahulsrigadde/personal/playground/programs/Recursion/",
+  sorts: "/Users/rahulsrigadde/personal/playground/programs/sorts/",
+  dp: "/Users/rahulsrigadde/personal/playground/programs/DynamicPrograming/",
 };
 class GenerateFileSystem {
   constructor(directoryPath) {
@@ -94,8 +96,8 @@ class GenerateFileSystem {
 }
 
 function driverFn(createmode = false) {
-  let inputString = "Longest Common Subsequence";
-  const fileSys = new GenerateFileSystem(filePath.dp);
+  let inputString = "Graph Challenge";
+  const fileSys = new GenerateFileSystem(filePath.recursion);
 
   // const files = fileSys.getFilesName();
   // fileSys.createfileNameAndRenameFile();
@@ -104,4 +106,4 @@ function driverFn(createmode = false) {
   !createmode && fileSys.modifyContent(inputString);
 }
 
-driverFn(!true);
+driverFn(true);
