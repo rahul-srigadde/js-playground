@@ -4,7 +4,8 @@
   "description": "A sample project to play with javascript",
   "main": "index.js",
   "scripts": {
-    "test": "node delete.js"
+    "test": "node delete.js",
+    "start": "node fieldchecker/cheker.js"
   },
   "author": "Rahul Srigadde",
   "license": "ISC",

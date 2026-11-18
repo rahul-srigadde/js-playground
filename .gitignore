@@ -4,6 +4,9 @@ logs
 *.log
 npm-debug.log*
 .env
+.venv/
+.idea/
+.qodo/
 
 # VS Code
 .vscode
@@ -121,3 +124,9 @@ venv/
 src/config/il-interconnect-common-config.json
 src/config/il-nms-intc-config.json
 src/config/il-interconnect-common-nodejs-config.json
+.qodo
+
+
+kakfa/node_modules
+
+fieldchecker/*
